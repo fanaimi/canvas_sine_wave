@@ -111,13 +111,32 @@ html {
     *zoom: 1;
 }
 
-body{background-color: #f1f2f3;}
+body{background-color: #f1f2f3;font-family:arial, helvetica, sans-serif;}
 
-
+h1{
+   padding-top:20px;
+   font-size: 2em;
+   text-align: center;
+}
 .canv {
   background-color: #fff;
   box-shadow: 3px 3px 3px #333;
   margin: 30px auto;
-  width: 960px;
+  width: 1240px;
   height: 400px;
+}
+
+.btnsPar{
+    text-align: center;
+    button{
+        padding:13px;
+        font-size: 120%;
+    }
+    button:nth-child(4){
+        margin-left:40px;
+    }
+
+    button:nth-child(5){
+        margin-right:40px;
+    }
 }

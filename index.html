@@ -2,11 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="http://www.fanaimi.com/blog/blog-content/uploads/2013/12/favicon.ico" >
     <title>fanaimi, canvas fun with trigonometry</title>
     <link rel="stylesheet" href="build/css/main.css">
+    <meta name="author" content="fanaimi, emiliano fantasia">
+    <meta name="description" content="drawing sine waves using canvas">
+    <meta name="keywords" content="fanaimi, emiliano fantasia, fanaimi demo, canvas, canvas animation, javascript, html5">
 </head>
 <body>
-    <canvas class="canv" id="c1" width="960" height="400"></canvas>
+    <h1>fanaimi demo - canvas wave studio #1 - sine wave</h1>
+    <canvas class="canv" id="c1" width="1240" height="400"></canvas>
+    <p class="btnsPar">
+        <button type="button" id="slowAngleBtn"> - angle speed</button>
+        <button type="button" id="pauseAngleBtn"> 0 angle speed</button>
+        <button type="button" id="fastAngleBtn"> + angle speed</button>
+
+        <button type="button" id="pauseBtn"> pause</button>
+        <button type="button" id="restoreBtn">restore</button>
+
+        <button type="button" id="slowGridBtn"> - wave speed</button>
+        <button type="button" id="pauseGridBtn"> 0 wave speed</button>
+        <button type="button" id="fastGridBtn"> + wave speed</button>
+    </p>
+    <p>Fork / contribute at this <a href="">repo</a></p>
 
     <script src="build/js/output.min.js"></script>
 </body>
