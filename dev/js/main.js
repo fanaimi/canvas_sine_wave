@@ -51,12 +51,8 @@ var
                     }
                 }
             }// if
-
         };//move
-
-
-
-    },
+    }// WaveDot,
 
     RedDot = function(x, y, r, ctx, cx, cy, cRad, speedAngle){
         this.x = x;
@@ -68,14 +64,11 @@ var
 
 
         this.draw = function(){
-            //console.log("drawing");
             this.ctx.beginPath();
             this.ctx.arc(this.x, this.y, 3, 0, 2* Math.PI, true);
             this.ctx.fillStyle = "red";
             this.ctx.fill();
             this.ctx.closePath();
-
-
         }; // draw
 
         this.move = function(){
@@ -149,7 +142,9 @@ var
     }, //addNewWaveDot
 
     moveWaveDots = function () {
-       /* for(let i of waveDots){
+       /*
+       ES6 for of
+       for(let i of waveDots){
             i.move();
             i.draw();
         }*/
@@ -166,7 +161,7 @@ var
         drawCentre();
         moveRedDot();
         drawRadius();
-        drawGuide();
+       drawGuide();
 
         addNewWaveDot();
         moveWaveDots();
@@ -230,10 +225,6 @@ var
                     waveDots[i].waveSpeed ++;
                 }
             });
-
-
-
-
     }, //bindBtns
 
 
