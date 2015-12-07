@@ -42,15 +42,16 @@ var
 
 
         this.move = function(){
-            if(this.x > leftEdge - this.r){
-                this.x -= this.waveSpeed;
-            } else {
+            //if(this.x > leftEdge - this.r){
+            if(this.x < w + this.r){
+                this.x += this.waveSpeed;
+            } else if( this.x < 400 || this.x < w + this.r ){
                 for (var l in waveDots) {
                     if (waveDots[l] == this) {
                         waveDots.splice(l, 1)
                     }
                 }
-            }// if
+            }
         };//move
     }// WaveDot,
 
@@ -116,7 +117,7 @@ var
     drawGuide = function(){
         ctx1.beginPath()
         ctx1.moveTo(rDot.x, rDot.y);
-        ctx1.lineTo(w, rDot.y);
+        ctx1.lineTo(400, rDot.y);
         ctx1.strokeStyle = "blue";
         ctx1.lineWidth = 1;
         ctx1.stroke();
@@ -136,7 +137,7 @@ var
 
 
     addNewWaveDot = function () {
-        var waveDot = new WaveDot(w, rDot.y, ctx1, waveSpeed, 400);
+        var waveDot = new WaveDot(400, rDot.y, ctx1, waveSpeed, 400);
         waveDots.push(waveDot);
         waveDot.draw();
     }, //addNewWaveDot
@@ -154,9 +155,40 @@ var
         }
     }, // moveWaveDots
 
-    playLoop = function () {
+        drawGreyLines = function () {
+            ctx1.beginPath()
+            ctx1.moveTo(400, 0);
+            ctx1.lineTo(400, h);
+            ctx1.moveTo(0, 50);
+            ctx1.lineTo(w, 50);
+
+            ctx1.moveTo(0, 200);
+            ctx1.lineTo(w, 200);
+
+            ctx1.moveTo(200, 0);
+            ctx1.lineTo(200, h);
+
+
+            ctx1.moveTo(50, 0);
+            ctx1.lineTo(50, h);
+
+
+            ctx1.moveTo(350, 0);
+            ctx1.lineTo(350, h);
+
+            ctx1.moveTo(0, 350);
+            ctx1.lineTo(w, 350);
+            ctx1.strokeStyle = "lightgrey";
+            ctx1.lineWidth = 1;
+            ctx1.stroke();
+            ctx1.closePath();
+        }, // drawGreyLine
+
+
+        playLoop = function () {
 
         clearCanvas(ctx1);
+        drawGreyLines();
         drawC1();
         drawCentre();
         moveRedDot();
@@ -166,7 +198,7 @@ var
         addNewWaveDot();
         moveWaveDots();
 
-        af = window.requestAnimationFrame(playLoop)
+        af = window.requestAnimationFrame(playLoop);
     }, //playLoop
 
     pauseLoop = function(){
