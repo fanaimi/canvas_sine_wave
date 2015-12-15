@@ -120,11 +120,13 @@ h1{
     font-weight: bold;
 }
 .canv {
-  background-color: #fff;
-  box-shadow: 3px 3px 3px #333;
-  margin: 30px auto;
-  width: 1240px;
-  height: 400px;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px #333;
+    margin: 30px auto;
+    max-width: 1420px;
+    max-height: 400px;
+    width: 94%;
+    height: auto;
 }
 
 .btnsPar{
